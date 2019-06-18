@@ -63,6 +63,7 @@
       locale: {
           cancelLabel: 'Clear',
           "format": "MM/DD/YYYY",
+          "separator": " -> ", 
       }
   });
 
@@ -71,7 +72,7 @@
   });
 
   	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
-      $(this).val('');
+      $(this).val('Check-in \u2192 Check-out');
   });
 </script>
 

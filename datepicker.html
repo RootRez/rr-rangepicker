@@ -51,7 +51,7 @@
 
 	</div>
 
-		<input type="submit" value="SEARCH" class="booking-submit" class="salmon-button">
+	<input id="saveBtn" type="submit" value="SEARCH" class="booking-submit">
 
 	</form>
 
@@ -59,15 +59,20 @@
 
 <script>
 
-var startDate;
-var endDate;
 $(document).ready(function() {
 	$('input[name="daterange"]').daterangepicker({
 		autoUpdateInput: false,
      	locale: {
           cancelLabel: 	'Clear',
           format: 		"MMM DD, YYYY"
-      	}
+      	},
+
+       function(start, end) {
+    		$('[name="in"]').val(start.format('MM/DD/YYYY'));
+            $('[name="out"]').val(end.format('MM/DD/YYYY'));
+            $('.booking-form').submit();
+  		}
+
   	});
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
@@ -77,6 +82,8 @@ $(document).ready(function() {
   	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('Check-in \u2192 Check-out');
   	});
+
+
 });
 </script>
 

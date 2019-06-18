@@ -58,22 +58,26 @@
 </div>
 
 <script>
+
+var startDate;
+var endDate;
+$(document).ready(function() {
 	$('input[name="daterange"]').daterangepicker({
-		     autoUpdateInput: false,
-      locale: {
-          cancelLabel: 'Clear',
-          "format": "MM/DD/YYYY",
-          "separator": " -> ", 
-      }
-  });
+		autoUpdateInput: false,
+     	locale: {
+          cancelLabel: 	'Clear',
+          format: 		"MMM DD, YYYY"
+      	}
+  	});
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
-      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-  });
+      $(this).val(picker.startDate.format('MMM DD, YYYY') + ' \u2192 ' + picker.endDate.format('MMM DD, YYYY'));
+  	});
 
   	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('Check-in \u2192 Check-out');
-  });
+  	});
+});
 </script>
 
 </body>

@@ -12,40 +12,44 @@
 <body>
 <div id="booking-widget" class="booking-widget">
 
-	<form id="booking-form" action="https://lodging.booktaos.com/" method="get" name="lodging" role="form">
+	<form class="booking-form" action="https://lodging.booktaos.com/" method="get" name="lodging" role="form">
 
 		
 		<input type="text" name="daterange" value="Check-in &rarr; Check-out" />
 
 		<input type="hidden" name="in" value="<?php echo $in ?>" />
         <input type="hidden" name="out" value="<?php echo $out ?>" />
+
+        <div class="book-people">
 		
-		<select id="adults" value="Adults" name="GuestsAdult">
-			<option value="1">1</option>
-			<option value="2" selected>2 Adults</option>
-			<option value="3">3 Adults</option>
-			<option value="4">4 Adults</option>
-			<option value="5">5 Adults</option>
-			<option value="6">6 Adults</option>
-			<option value="7">7 Adults</option>
-			<option value="8">8 Adults</option>
-			<option value="9">9 Adults</option>
-			<option value="10">10 Adults</option>
-		</select>
-		
-		<select id="children" value="Children" name="GuestsChildren">
-			<option value="0">0 Children</option>
-			<option value="1">1 Children</option>
-			<option value="2">2 Children</option>
-			<option value="3">3 Children</option>
-			<option value="4">4 Children</option>
-			<option value="5">5 Children</option>
-			<option value="6">6 Children</option>
-			<option value="7">7 Children</option>
-			<option value="8">8 Children</option>
-			<option value="9">9 Children</option>
-			<option value="10">10 Children</option>
-		</select>
+			<select id="adults" value="Adults" name="GuestsAdult">
+				<option value="1">1</option>
+				<option value="2" selected>2 Adults</option>
+				<option value="3">3 Adults</option>
+				<option value="4">4 Adults</option>
+				<option value="5">5 Adults</option>
+				<option value="6">6 Adults</option>
+				<option value="7">7 Adults</option>
+				<option value="8">8 Adults</option>
+				<option value="9">9 Adults</option>
+				<option value="10">10 Adults</option>
+			</select>
+			
+			<select id="children" value="Children" name="GuestsChildren">
+				<option value="0">0 Children</option>
+				<option value="1">1 Children</option>
+				<option value="2">2 Children</option>
+				<option value="3">3 Children</option>
+				<option value="4">4 Children</option>
+				<option value="5">5 Children</option>
+				<option value="6">6 Children</option>
+				<option value="7">7 Children</option>
+				<option value="8">8 Children</option>
+				<option value="9">9 Children</option>
+				<option value="10">10 Children</option>
+			</select>
+
+	</div>
 
 		<input type="submit" value="SEARCH" class="booking-submit" class="salmon-button">
 
@@ -55,35 +59,20 @@
 
 <script>
 	$('input[name="daterange"]').daterangepicker({
-		"locale": {
-        "format": "MM/DD/YYYY",
-        "separator": " -> ",
-        "applyLabel": "Apply",
-        "cancelLabel": "Candles",
-     
-        "weekLabel": "W",
-       
-        "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-        "firstDay": 1
-    },
-    "startDate": "05/29/2019",
-    "endDate": "06/04/2019"
-}, function(start, end, label) {
-  console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-});
+		     autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear',
+          "format": "MM/DD/YYYY",
+      }
+  });
+
+	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
 </script>
 
 </body>

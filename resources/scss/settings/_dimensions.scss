@@ -1,0 +1,19 @@
+// Dimensions
+
+$base-font-size:    	16px;
+$base-line-height:  	20px;
+
+$base-radius:       	3px;
+
+$base-spacing-unit: 	$base-line-height;
+$margin:				$base-spacing-unit;
+
+$site-max-width:		1200px;
+$site-width:			$site-max-width;
+$post-width: 			800px;
+
+$book-form-height:		60px;
+
+@function content-width() {
+	@return 750;
+}

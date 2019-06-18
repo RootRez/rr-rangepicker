@@ -1,0 +1,95 @@
+// Colors
+
+// Mono
+$black:							black;
+$white:							white;
+$gray-lightest:					#f9f9f9;
+$gray-light:					#ececec;
+$gray:							#ccc;
+$gray-dark:						#979797;
+$gray-darker:					#292929;
+$gray-darkest:					#212121;
+
+
+
+// Colors
+$blue:							#2387f2;
+$blue-dark:						#0b162f; 
+$blue-dark:						#0b162f; 
+$orange:						#EE7E43; 
+$yellow:						#FFD00F;
+$red:							#d71920;
+
+$text-color:					$black;
+
+
+//Body
+$text-color:					$black;
+
+
+$primary-color:					$red;
+$secondary-color:				$blue;
+$tertiary-color:				$blue-dark;
+
+$price-color:					$tertiary-color;
+
+
+// Links
+$link-color:					$primary-color;
+$link-color-hover:				darken($primary-color, .2);
+$searchbar-link-color:			$link-color;
+
+// Headings
+$headings-color:         		$black;
+
+
+// Backgrounds
+$primary-background-color:		$white;
+$secondary-background-color:	$gray-lightest;
+$body-background-color:			$secondary-background-color;
+
+
+
+
+// Buttons
+// --------------------------- 
+
+// Main Button
+$button-color:					$primary-color;
+$button-background-color:		$button-color;
+$button-text-color:				$white;
+$button-border-width:			0;
+$button-border-color:			$button-color;
+
+$button-background-color-hover:	$secondary-color;
+$button-text-color-hover:		$white;
+$button-border-color-hover:		$button-color;
+$button-text-transform:			uppercase;
+
+// CTA Button
+$button-color-cta:				$primary-color;
+$button-border-color-cta:		$button-color-cta;
+$button-text-color-cta:			$white;
+
+$button-color-hover-cta:		$secondary-color;
+$button-border-color-hover-cta:	$secondary-color;
+$button-text-color-hover-cta:	$red;
+
+
+// Borders
+// --------------------------- 
+
+$border-color:					$gray-light;
+$border-color-light:			$gray-light;
+
+
+// Checkout pages
+$theme-dark-background:			$gray-darker; 
+$form-highlight:				$blue;
+$sidebar-highlight-color:		$primary-color;
+$sidebar-border-color:			rgba($white, .1);
+
+
+// Messages
+$notice-color:					$blue;
+$error-color:					$red;

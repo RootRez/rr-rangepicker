@@ -111,9 +111,7 @@ var sassConfig = {
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
-   //.sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
-   //.sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
-
+   
 /*
  * Add custom Webpack configuration.
  *
@@ -129,13 +127,37 @@ mix.webpackConfig( {
 	devtool     : mix.inProduction() ? false : 'source-map',
 	performance : { hints  : false    },
 	externals   : { jquery : 'jQuery' },
-	resolve     : {
-		alias : {
-			// Alias for Hybrid Customize assets.
-			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
-			'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' )
-		}
-	}
+	
+	plugins     : [
+		// @link https://github.com/webpack-contrib/copy-webpack-plugin
+		new CopyWebpackPlugin( [
+			{ from : `${devPath}/img`,   to : 'img'   },
+			{ from : `${devPath}/svg`,   to : 'svg'   },
+			{ from : `${devPath}/fonts`, to : 'fonts' }
+		] ),
+		// @link https://github.com/Klathmon/imagemin-webpack-plugin
+		new ImageminPlugin( {
+			test     : /\.(jpe?g|png|gif|svg)$/i,
+			disable  : process.env.NODE_ENV !== 'production',
+			optipng  : { optimizationLevel : 3 },
+			gifsicle : { optimizationLevel : 3 },
+			pngquant : {
+				quality : '65-90',
+				speed   : 4
+			},
+			svgo : {
+				plugins : [
+					{ cleanupIDs                : false },
+					{ removeViewBox             : false },
+					{ removeUnknownsAndDefaults : false }
+				]
+			},
+			plugins : [
+				// @link https://github.com/imagemin/imagemin-mozjpeg
+				imageminMozjpeg( { quality : 75 } )
+			]
+		} )
+	]
 } );
 
 if ( process.env.sync ) {

@@ -1,0 +1,26 @@
+// Typography
+
+$font-family:           'proximanova-regular', sans-serif;
+$alt-font-family:       'proximanova-bold', Helvetica, sans-serif;
+$mono-font-family:       Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Font Weights
+$font-weight:           400;
+$reg-font-weight:       $font-weight;
+$light-font-weight:     300;
+$mid-font-weight:       600;
+$bold-font-weight:      700;
+
+// Other type settings
+$base-font-family:      $font-family;
+$base-font-size:        16px;
+$base-font-style:       normal;
+$base-font-weight:      400;
+$base-line-height:      1.5;
+
+// Headings
+$headings-font-family:        $font-family;
+$headings-font-weight:        700;
+
+//Body
+$text-font-weight:        $font-weight;

@@ -17,8 +17,8 @@
 		
 		<input type="text" name="daterange" value="Check-in &rarr; Check-out" />
 
-		<input type="hidden" name="in" value="<?php echo $in ?>" />
-        <input type="hidden" name="out" value="<?php echo $out ?>" />
+		<input type="hidden" name="Checkin" value="" />
+        <input type="hidden" name="Checkout" value="" />
 
         <div class="book-people">
 		
@@ -65,8 +65,8 @@ $(function() {
 		autoUpdateInput: false
 	}, function(start, end) {
        	console.log("Callback has been called!");
-    		$('input[name="in"]').val(start.format('MM/DD/YYYY'));
-            $('input[name="out"]').val(end.format('MM/DD/YYYY'));
+    		$('input[name="Checkin"]').val(start.format('YYYY-MM-DD'));
+           $('input[name="Checkout"]').val(end.format('YYYY-MM-DD'));
   	});
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {

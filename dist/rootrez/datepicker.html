@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/screen.css" />	
+</head>
+
+<body>
+<div id="booking-widget" class="booking-widget">
+
+	<form class="booking-form" action="https://lodging.booktaos.com/" method="get" name="lodging" role="form">
+
+		
+		<input type="text" name="daterange" value="Check-in &rarr; Check-out" />
+
+		<input type="hidden" name="Checkin" value="" />
+        <input type="hidden" name="Checkout" value="" />
+
+        <div class="book-people">
+		
+			<select id="adults" value="Adults" name="GuestsAdult">
+				<option value="1">1</option>
+				<option value="2" selected>2 Adults</option>
+				<option value="3">3 Adults</option>
+				<option value="4">4 Adults</option>
+				<option value="5">5 Adults</option>
+				<option value="6">6 Adults</option>
+				<option value="7">7 Adults</option>
+				<option value="8">8 Adults</option>
+				<option value="9">9 Adults</option>
+				<option value="10">10 Adults</option>
+			</select>
+			
+			<select id="children" value="Children" name="GuestsChildren">
+				<option value="0">0 Children</option>
+				<option value="1">1 Children</option>
+				<option value="2">2 Children</option>
+				<option value="3">3 Children</option>
+				<option value="4">4 Children</option>
+				<option value="5">5 Children</option>
+				<option value="6">6 Children</option>
+				<option value="7">7 Children</option>
+				<option value="8">8 Children</option>
+				<option value="9">9 Children</option>
+				<option value="10">10 Children</option>
+			</select>
+
+	</div>
+
+	<input id="saveBtn" type="submit" value="SEARCH" class="booking-submit">
+
+	</form>
+
+</div>
+
+
+<script>
+
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+		autoUpdateInput: false
+	}, function(start, end) {
+       	console.log("Callback has been called!");
+    		$('input[name="Checkin"]').val(start.format('YYYY-MM-DD'));
+           $('input[name="Checkout"]').val(end.format('YYYY-MM-DD'));
+  	});
+
+	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MMM DD, YYYY') + ' \u2192 ' + picker.endDate.format('MMM DD, YYYY'));
+  	});
+
+  	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('Check-in \u2192 Check-out');
+  	});
+
+});
+</script>
+
+</body>
+
+
+</html>
+
+

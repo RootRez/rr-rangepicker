@@ -186,7 +186,7 @@ html {
 .daterangepicker td.available svg, .daterangepicker th.available svg {
 	width: 8px;
 	height: 14px;
-	fill: #d71920;
+	fill: #EE7E43;
 	vertical-align: middle;
 }
 
@@ -206,7 +206,7 @@ html {
 }
 
 .daterangepicker td.in-range {
-	background-color: #d71920;
+	background-color: #ee7e43;
 	border-color: transparent;
 	color: white;
 	border-radius: 0;
@@ -225,7 +225,7 @@ html {
 }
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
-	background-color: #d71920;
+	background-color: #EE7E43;
 	border-color: transparent;
 	color: #fff;
 }
@@ -306,14 +306,14 @@ html {
 	}
 	.daterangepicker.ltr .drp-buttons button {
 		-webkit-box-flex: 0;
-		    -ms-flex: 0 1 50%;
+		            -ms-flex: 0 1 50%;
 		        flex: 0 1 50%;
 		border: none;
 		padding: 10px;
 		cursor: pointer;
 	}
 	.daterangepicker.ltr .drp-buttons .applyBtn {
-		background-color: #d71920;
+		background-color: #EE7E43;
 		color: white;
 	}
 	.daterangepicker.ltr .drp-buttons .cancelBtn {
@@ -340,7 +340,7 @@ html {
 .range_inputs .applyBtn {
 	cursor: pointer;
 	float: right;
-	background-color: #d71920;
+	background-color: #EE7E43;
 	color: white;
 }
 
@@ -377,13 +377,13 @@ html {
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-flow: row wrap;
+	            -ms-flex-flow: row wrap;
 	        flex-flow: row wrap;
 	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
+	            -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
+	            -ms-flex-align: center;
 	        align-items: center;
 	width: 100%;
 }
@@ -392,7 +392,7 @@ html {
 	padding: 20px 10px;
 	border: none;
 	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 50%;
+	            -ms-flex: 0 1 50%;
 	        flex: 0 1 50%;
 	border-right: 1px solid #ececec;
 	margin: 0;
@@ -404,10 +404,10 @@ html {
 }
 
 .booking-form input[type=submit] {
-	background-color: #d71920;
+	background-color: #EE7E43;
 	border: none;
 	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 20%;
+	            -ms-flex: 0 1 20%;
 	        flex: 0 1 20%;
 	padding: 20px 10px;
 	color: white;
@@ -425,7 +425,7 @@ html {
 	        box-shadow: none;
 	border: 0 !important;
 	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 50%;
+	            -ms-flex: 0 1 50%;
 	        flex: 0 1 50%;
 	line-height: 3;
 	overflow: hidden;
@@ -436,8 +436,6 @@ html {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 10%;
+	            -ms-flex: 0 1 10%;
 	        flex: 0 1 10%;
 }
-
-/*# sourceMappingURL=screen.css.map*/

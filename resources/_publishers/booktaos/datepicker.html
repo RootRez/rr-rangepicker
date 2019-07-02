@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script type="text/javascript" src="https://assets.rootrez.com/rr-rangepicker/dist/js/script.js"></script>
 
-<html lang='en'>
+<link rel="stylesheet" type="text/css" href="https://assets.rootrez.com/rr-rangepicker/dist/booktaos/css/screen.css" />	
 
-<head>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://assets.rootrez.com/rr-rangepicker/dist/booktaos/css/screen.css" />	
-</head>
-
-<body>
 <div id="booking-widget" class="booking-widget">
 
 	<form class="booking-form" action="https://lodging.booktaos.com/" method="get" name="lodging" role="form">
@@ -47,6 +42,7 @@
 				<option value="8">8 Children</option>
 				<option value="9">9 Children</option>
 				<option value="10">10 Children</option>
+				<option value="10">10 Children</option>
 			</select>
 
 	</div>
@@ -56,33 +52,4 @@
 	</form>
 
 </div>
-
-
-<script>
-
-$(function() {
-  $('input[name="daterange"]').daterangepicker({
-		autoUpdateInput: false
-	}, function(start, end) {
-       	console.log("Callback has been called!");
-    		$('input[name="Checkin"]').val(start.format('YYYY-MM-DD'));
-           $('input[name="Checkout"]').val(end.format('YYYY-MM-DD'));
-  	});
-
-	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
-      $(this).val(picker.startDate.format('MMM DD, YYYY') + ' \u2192 ' + picker.endDate.format('MMM DD, YYYY'));
-  	});
-
-  	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
-      $(this).val('Check-in \u2192 Check-out');
-  	});
-
-});
-</script>
-
-</body>
-
-
-</html>
-
 

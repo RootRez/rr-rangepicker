@@ -33,7 +33,8 @@ const { mix }           = require( 'laravel-mix' );
  * folder in the theme.
  */
 const devPath  = 'resources';
-const pubPath  = 'rootrez';
+const pubPath  = 'booktaos';
+//const pubPath  = 'rootrez';
 
 /*
  * Sets the path to the generated assets. By default, this is the `/dist` folder

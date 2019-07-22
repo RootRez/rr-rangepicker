@@ -21,6 +21,14 @@
         &:focus {
         	outline: none;
         }
+
+        @include mq(phone-only) {
+            font-size: 12px;
+        }
+
+        @include mq(small-phone-only) {
+            font-size: 11px;
+        }
         
     }
 
@@ -42,6 +50,11 @@
         @include mq(phone-only) {
             flex-basis: 100%;
             border-radius: 0 0 3px 3px;
+            font-size: 12px;
+        }
+
+        @include mq(small-phone-only) {
+            font-size: 11px;
         }
     }
 
@@ -58,6 +71,14 @@
         line-height: 3;
         //background: #2c3e50;
         overflow: hidden;
+
+        @include mq(phone-only) {
+            font-size: 12px;
+        }
+
+        @include mq(small-phone-only) {
+            font-size: 11px;
+        }
         
     }
 
